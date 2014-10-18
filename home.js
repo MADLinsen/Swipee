@@ -7,20 +7,43 @@
 			console.log("Event Name:" + newPost.event_name);
 		});
     
-    $scope.l = function() {
-      alert("l");
-    }
-    $scope.r = function() {
-      alert("r");
-    }
-    
     $(".collapse").collapse({'toggle': false});
     $(".inv").click(function(event) {
-      $(this).next(".collapse").collapse('toggle');
-      $(".collapse").not(this).collapse('hide');
+      
+      // Is collapsed
+      if (!$(this).next(".collapse").is(":visible") && $(event.target).hasClass("inv")) {
+        $(this).next(".collapse").collapse('toggle');
+        $(".collapse").not(this).collapse('hide');
+      }
+      // Is expanded
+      if ($(this).next(".collapse").is(":visible")) {
+        $(this).next(".collapse").collapse('toggle');
+      }
     });
+    
     $(".collapse").click(function(event) {
       $(this).collapse('toggle');
     });
+    
+    $(".arrow-left").click(function(event) {
+      var collapse = $(this).parent(".inv").next(".collapse");
+      collapse.animate({ marginLeft: '90%' }, 500, function() {
+        $(this).remove();
+      });
+      $(this).parent(".inv").animate({ marginRight: '90%' }, 500, function() {
+        $(this).remove();
+        $(this).next(".collapse").remove();
+      });
+    });
+    
+    $(".arrow-right").click(function(event) {
+      $(this).parent(".inv").next(".collapse").animate({ marginLeft: '90%' }, 500, function() {
+        $(this).remove();
+      });
+      $(this).parent(".inv").animate({ marginLeft: '90%' }, 500, function() {
+        $(this).remove();
+      });
+    });
+    
 	}]);
 }());

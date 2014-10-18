@@ -36,6 +36,12 @@ body {
   height: auto;
 }
 
+.arrows:hover {
+  width: 3%;
+  top: -8px;
+  cursor: pointer;
+}
+
 .arrow-left {
   margin-left: 10px;
   float: left;
