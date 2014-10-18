@@ -1,0 +1,47 @@
+body {
+  margin: 0px;
+}
+
+#invites {
+  border-bottom: 1px solid gray;
+  text-align: center;
+}
+
+.inv {
+  margin: 0px;
+  padding: 0px;
+  padding-bottom: 10px;
+  height: 50px;
+  border-top: 1px solid gray;
+}
+
+.info {
+  margin: 0px;
+  padding: 0px;
+  height: 75px;
+}
+
+.group {
+  background-color: #d60004;
+}
+
+.event {
+  background-color: #52f132;
+}
+
+.arrows {
+  position: relative;
+  top: -6px;
+  width: 2%;
+  height: auto;
+}
+
+.arrow-left {
+  margin-left: 10px;
+  float: left;
+}
+
+.arrow-right {
+  margin-right: 10px;
+  float: right;
+}

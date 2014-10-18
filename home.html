@@ -2,8 +2,36 @@
 <html>
 	<head>
 			<title>Swipee</title>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+  		<script src='https://cdn.firebase.com/js/client/1.1.1/firebase.js'></script>
+  		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular-touch.js"></script>
+      <script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/X.Y.Z/angular-touch.js"></script>
+      <link href="home.css" type="text/css" rel="stylesheet" />
+      <script src="home.js" type="text/javascript"></script>
+      
+      <!-- Latest compiled and minified CSS -->
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+
+      <!-- Optional theme -->
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+
+      <!-- Latest compiled and minified JavaScript -->
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 	</head>
-	<body>
-		
+	<body ng-app="swipee" ng-controller="UserCtrl">
+    <div id="invites">
+  		<div class="event inv" ng-swipe-left="l()" ng-swipe-right="r()">
+        Movie Night</br>8:00 PM
+        <img class="arrows arrow-left" src="images/Left.png" />
+        <img class="arrows arrow-right" src="images/Right.png" />
+      </div>
+      <div class="event info collapse">Linsen's House</div>
+      <div class="group inv">Football<br/>6:00 PM</div>
+      <div class="group info collapse">IMA</div>
+      <div class="event inv">Seahawks Game</br>1:25 PM</div>
+      <div class="event info collapse">Wilburt's House</div>
+    </div>
 	</body>
 </html>
