@@ -21,25 +21,13 @@
       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 	</head>
 	<body ng-app="swipee" ng-controller="UserCtrl">
-    <div id="invites">
+    <div id="invites" ng-repeat="invite in invites" ng-click="clickInvite($event)">
   		<div class="event inv">
-        Movie Night</br>8:00 PM
-        <img class="arrows arrow-left" src="images/Left.png" />
-        <img class="arrows arrow-right" src="images/Right.png" />
+        {{invite.name}}</br>{{invite.time}}
+        <img class="arrows arrow-left" src="images/Left.png" ng-click="clickLeftArrow($event)"/>
+        <img class="arrows arrow-right" src="images/Right.png" ng-click="clickRightArrow($event)"/>
       </div>
-      <div class="event info collapse">Linsen's House</div>
-      <div class="group inv">
-        Football<br/>6:00 PM
-        <img class="arrows arrow-left" src="images/Left.png" />
-        <img class="arrows arrow-right" src="images/Right.png" />
-      </div>
-      <div class="group info collapse">IMA</div>
-      <div class="event inv">
-        Seahawks Game</br>1:25 PM
-        <img class="arrows arrow-left" src="images/Left.png" />
-        <img class="arrows arrow-right" src="images/Right.png" />
-      </div>
-      <div class="event info collapse">Wilburt's House</div>
+      <div class="event info collapse">{{invite.location}}</div>
     </div>
 	</body>
 </html>
