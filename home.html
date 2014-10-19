@@ -21,13 +21,21 @@
       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 	</head>
 	<body ng-app="swipee" ng-controller="UserCtrl">
-    <div id="invites" ng-repeat="invite in invites" ng-click="clickInvite($event)">
-  		<div class="event inv">
-        {{invite.name}}</br>{{invite.time}}
-        <img class="arrows arrow-left" src="images/Left.png" ng-click="clickLeftArrow($event)"/>
-        <img class="arrows arrow-right" src="images/Right.png" ng-click="clickRightArrow($event)"/>
+    <div id="background">
+      <div id="main">
+        <div id="invites" ng-repeat="invite in invites | orderBy:'time'" ng-click="clickInvite($event)">
+      		<div class="event inv" style="background-color: {{invite.color}}">
+            {{invite.name}}</br>{{invite.time}}
+            <img class="arrows arrow-left" src="images/Left.png" ng-click="clickLeftArrow($event)"/>
+            <img class="arrows arrow-right" src="images/Right.png" ng-click="clickRightArrow($event)"/>
+          </div>
+          <div class="event info" style="background-color: {{invite.color}}" ng-click="clickInfo($event)">{{invite.location}}</div>
+        </div>
+        <div id="options">
+          <h3 id="create-event">Create Event</h3>
+          <h3 id="accepted-events">Accepted Events</h3>
+        </div>
       </div>
-      <div class="event info collapse">{{invite.location}}</div>
     </div>
 	</body>
 </html>

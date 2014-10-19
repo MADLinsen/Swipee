@@ -1,6 +1,19 @@
-body {
+html, body {
   margin: 0px;
+  height: 100%;
 }
+
+#background {
+  height: 100%;
+  background-color: #d9d508;
+}
+
+#main {
+  width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 
 #invites {
   border-bottom: 1px solid gray;
@@ -10,7 +23,6 @@ body {
 .inv {
   margin: 0px;
   padding: 0px;
-  padding-bottom: 10px;
   height: 50px;
   border-top: 1px solid gray;
 }
@@ -18,7 +30,8 @@ body {
 .info {
   margin: 0px;
   padding: 0px;
-  height: 75px;
+  height: 0px;
+  opacity: 0;
 }
 
 .group {
@@ -32,12 +45,12 @@ body {
 .arrows {
   position: relative;
   top: -6px;
-  width: 2%;
+  width: 5%;
   height: auto;
 }
 
 .arrows:hover {
-  width: 3%;
+  width: 6%;
   top: -8px;
   cursor: pointer;
 }
@@ -50,4 +63,33 @@ body {
 .arrow-right {
   margin-right: 10px;
   float: right;
+}
+
+#options {
+  margin: 0px;
+  padding: 0px;
+  height: 50px;
+  border-bottom: 1px solid gray;
+  background-color: #b1067b;
+}
+
+#create-event, #accepted-events {
+  position: relative;
+  top: -6px;
+  color: black;
+}
+
+#create-event:hover, #accepted-events:hover {
+  font-weight: bold;
+  cursor: pointer;
+}
+
+#create-event {
+  float: left;
+  margin-left: 10px;
+}
+
+#accepted-events {
+  float: right;
+  margin-right: 10px;
 }
